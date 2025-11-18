@@ -1,0 +1,84 @@
+1. Front-End (Client-side)
+
+Definition: The front-end is what users directly see and interact with in their web browser or app interface.
+
+Responsibilities:
+
+User Interface (UI): Displaying the layout, buttons, forms, menus, graphics, etc.
+
+User Experience (UX): Ensuring interactions are smooth, intuitive, and responsive.
+
+Client-side logic: Handling interactions like form validation, animations, or dynamic updates without refreshing the page.
+
+Communication with backend: Sending requests (like API calls) to the backend and displaying the response.
+
+Technologies commonly used:
+
+HTML, CSS, JavaScript
+
+Frameworks/libraries: React, Angular, Vue.js, Svelte
+
+Example: When you click “Submit” on a form, the front-end collects the data and sends it to the server.
+
+2. Back-End (Server-side)
+
+Definition: The back-end is the part of the application that runs on the server and handles business logic, processing, and integration with databases.
+
+Responsibilities:
+
+Processing requests: Receives requests from the front-end, processes them, and returns responses.
+
+Business logic: Handles calculations, rules, and workflows of the application.
+
+Authentication & authorization: Verifying user identity and controlling access.
+
+Integration: Communicating with databases, external APIs, or other services.
+
+Data validation and security: Ensuring input data is safe and meets requirements before storing or processing.
+
+Technologies commonly used:
+
+Languages: Java, Python, JavaScript (Node.js), Ruby, PHP, Go
+
+Frameworks: Express.js, Django, Spring Boot, Ruby on Rails
+
+Example: After receiving your login credentials, the backend checks if they match a record in the database and returns a “success” or “error” response.
+
+3. Database
+
+Definition: The database is where all the application’s data is stored and managed.
+
+Responsibilities:
+
+Data storage: Keeping structured or unstructured data safely.
+
+Data retrieval: Allowing the backend to fetch or query data efficiently.
+
+Data integrity: Ensuring relationships and constraints are maintained.
+
+Data security: Controlling access to sensitive data.
+
+Transactions & backups: Managing consistent updates and storing backups to prevent data loss.
+
+Types of databases:
+
+Relational databases (SQL): MySQL, PostgreSQL, SQL Server
+
+Non-relational databases (NoSQL): MongoDB, Redis, Cassandra
+
+Example: When the backend checks your login credentials, it queries the database for a matching user record.
+
+How they work together
+
+User (Front-End) → clicks a button or submits a form.
+
+Front-End → sends the request to the Back-End.
+
+Back-End → processes the request, queries the Database, applies business logic.
+
+Database → returns the requested data to the Back-End.
+
+Back-End → sends processed data back to the Front-End.
+
+Front-End → displays the data to the user.
+____________________________________________________________________________________________
