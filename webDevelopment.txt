@@ -82,3 +82,165 @@ Back-End → sends processed data back to the Front-End.
 
 Front-End → displays the data to the user.
 ____________________________________________________________________________________________
+
+1. SQL Server
+
+What it is:
+SQL Server is a relational database management system (RDBMS) developed by Microsoft. It stores and manages data in structured tables with rows and columns.
+
+Role in .NET stack:
+
+Acts as the database layer in an application.
+
+Stores persistent data for the application (users, orders, products, etc.).
+
+Supports SQL (Structured Query Language) for querying, updating, and managing data.
+
+Key Features:
+
+Relational storage: Tables with primary/foreign keys, indexes, and constraints.
+
+Transactions: Ensures data consistency and integrity.
+
+Stored Procedures & Views: Predefined queries and operations for efficiency.
+
+Integration with .NET: Works seamlessly with Entity Framework Core and ADO.NET.
+
+Example Usage:
+If you have an e-commerce site, SQL Server will store customer info, product catalog, and order history.
+
+2. C#
+
+What it is:
+C# (pronounced “C-Sharp”) is a modern, object-oriented programming language developed by Microsoft, primarily for building applications on the .NET platform.
+
+Role in .NET stack:
+
+The back-end language used to write business logic, APIs, services, and server-side processing.
+
+Can also be used in front-end (with Blazor) for full-stack development.
+
+Key Features:
+
+Object-oriented: Classes, inheritance, interfaces.
+
+Strongly typed: Helps catch errors at compile time.
+
+Asynchronous programming: Supports async/await for scalable apps.
+
+Integration with .NET: Full support for libraries, frameworks, and APIs.
+
+Example Usage:
+Writing code to calculate order totals, validate user input, or handle login authentication.
+
+3. Entity Framework Core (EF Core)
+
+What it is:
+EF Core is an Object-Relational Mapper (ORM) for .NET. It allows developers to interact with databases using C# objects instead of raw SQL queries.
+
+Role in .NET stack:
+
+Bridges C# (back-end code) and SQL Server (database).
+
+Converts database tables into C# classes (entities) and vice versa.
+
+Key Features:
+
+Code-first approach: Create C# classes first, EF Core generates database schema.
+
+Database-first approach: Generate C# classes from existing database.
+
+LINQ support: Query database using C# syntax.
+
+Change tracking: Automatically tracks updates to objects and persists them to the database.
+
+Example Usage:
+
+var customer = new Customer { Name = "John", Email = "john@example.com" };
+dbContext.Customers.Add(customer);
+dbContext.SaveChanges();
+
+
+EF Core will generate the proper SQL INSERT statement for SQL Server.
+
+4. LINQ (Language Integrated Query)
+
+What it is:
+LINQ is a query syntax integrated into C# that allows you to query collections, objects, or databases in a readable, declarative way.
+
+Role in .NET stack:
+
+Works with EF Core to query SQL Server using C# instead of SQL.
+
+Can also be used on in-memory collections like arrays or lists.
+
+Key Features:
+
+Readable queries: Similar to SQL but in C# syntax.
+
+Strongly typed: Compile-time checking.
+
+Supports filtering, ordering, joining, grouping: Very versatile.
+
+Example Usage:
+
+var activeCustomers = dbContext.Customers
+                               .Where(c => c.IsActive)
+                               .OrderBy(c => c.Name)
+                               .ToList();
+
+
+This retrieves active customers sorted by name.
+
+5. Blazor
+
+What it is:
+Blazor is a .NET web framework for building interactive web applications using C# instead of JavaScript.
+
+Role in .NET stack:
+
+Handles front-end UI rendering and interactions.
+
+Can run either:
+
+Blazor Server: Code runs on the server, UI updates are sent via SignalR.
+
+Blazor WebAssembly: Code runs directly in the browser.
+
+Key Features:
+
+Full-stack C#: Use C# for both front-end and back-end.
+
+Component-based: Build reusable UI components.
+
+Data binding: Two-way binding with forms and UI elements.
+
+Integration with EF Core & APIs: Can fetch data from backend or database directly.
+
+Example Usage:
+
+<h3>Customer List</h3>
+<ul>
+@foreach(var customer in customers)
+{
+    <li>@customer.Name</li>
+}
+</ul>
+
+
+This renders a list of customers fetched from the backend.
+
+How They Work Together in a .NET Stack
+
+SQL Server: Stores data (customers, orders, etc.).
+
+EF Core: Maps SQL Server tables to C# objects.
+
+C# & LINQ: Handles business logic and queries the database through EF Core.
+
+Blazor: Builds the interactive front-end that communicates with C# backend code.
+
+Flow Example:
+
+User submits a form in a Blazor app → C# backend code receives the data → EF Core maps it to SQL Server → LINQ queries/manipulates data → Results are sent back to Blazor → UI updates dynamically.
+_____________________________________________________________
